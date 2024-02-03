@@ -1,11 +1,11 @@
 # REF https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
 
-GIT_AHEAD="%F{magenta}%B↑%b"
-GIT_BEHIND="%F{green}%B↓%b"
-GIT_STAGED="%F{green}%B●%b"
-GIT_UNSTAGED="%F{yellow}%B●%b"
-GIT_UNTRACKED="%F{white}%B●%b"
-GIT_UNMERGED="%F{red}%B✕%b"
+GIT_AHEAD="%F{magenta}↑"
+GIT_BEHIND="%F{green}↓"
+GIT_STAGED="%F{green}●"
+GIT_UNSTAGED="%F{yellow}●"
+GIT_UNTRACKED="%F{white}●"
+GIT_UNMERGED="%F{red}✕"
 
 function get_git_path() {
   echo $(git rev-parse --show-toplevel 2> /dev/null)
@@ -51,7 +51,7 @@ function git_prompt() {
   if [[ "$(echo $files)" =~ "(A[AU]|D[DU]|U[DAU])" ]] then
     STATUS="$STATUS$GIT_UNMERGED"
   fi
-  
+
   if [[ ! -z "$STATUS" ]]; then
     STATUS=" $STATUS"
   fi
@@ -77,7 +77,7 @@ function get_dir_path() {
 
 ICON_EMOJI="%F{white}🌷"
 if [ "$(whoami)" = "root" ]; then
-    ICON_EMOJI='🌱'
+    ICON_EMOJI='%F{white}🌱'
 fi
 
 USER_NAME="%F{magenta}%n%F"
@@ -88,4 +88,4 @@ if test -f /.dockerenv; then
 fi
 
 PROMPT='$TIME $(get_dir_path) $ICON_EMOJI '
-RPROMPT='$(git_prompt)$USER_NAME$DOCKER_PROMPT'
+RPROMPT='$(git_prompt)$USER_NAME$PROMPT_DOCKER'
