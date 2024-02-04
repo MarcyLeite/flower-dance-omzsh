@@ -1,6 +1,6 @@
 # Flower Dance Oh My ZSH Theme
 Tired of a black screen with white text? Or a purple one, with some colors, but no personality?
-Flower Dance is a custom theme for [https://ohmyz.sh/](Oh My ZSH) that makes your shell exprience fun without so much polution!
+Flower Dance is a custom theme for [Oh My ZSH](https://ohmyz.sh/) that makes your shell exprience fun without so much polution!
 
 ## Features and behaviors
 Prompt left size:
@@ -55,4 +55,11 @@ ZSH_THEME='flower-dance'
 Finally, source `.zshrc` file:
 
 ```sh
-source ~/.zshrc```
+source ~/.zshrc
+```
+
+## Images
+
+![Git basic demo](https://raw.githubusercontent.com/MarcyLeite/flower-dance-omzsh/main/images/git-demo.png)
+
+![Root/Docker demo](https://raw.githubusercontent.com/MarcyLeite/flower-dance-omzsh/main/images/root-docker-demo.png)
